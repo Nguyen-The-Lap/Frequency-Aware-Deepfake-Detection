@@ -1,0 +1,22 @@
+seed: 42
+image_size: 224
+batch_size: 16
+num_workers: 0
+epochs: 30
+learning_rate: 0.0001
+weight_decay: 0.0001
+patience: 5
+device: auto
+model:
+  kind: rgb
+  pretrained: true
+  fusion: concat
+data:
+  train_csv: data/manifests/ffpp_train.csv
+  val_csv: data/manifests/ffpp_val.csv
+  test_csv: data/manifests/ffpp_test.csv
+  unseen_csv: data/manifests/celebdf_v2.csv
+  image_column: image_path
+  label_column: label
+  video_column: video_id
+output_dir: outputs

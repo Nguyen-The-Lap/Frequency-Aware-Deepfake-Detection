@@ -1,0 +1,16 @@
+# Planned evaluation grid. Execute each condition on identical fixed split manifests.
+baseline: {kind: rgb, fusion: concat, frequency_method: dct}
+branch_ablation:
+  - {kind: rgb}
+  - {kind: frequency, frequency_method: dct}
+  - {kind: dual, fusion: concat, frequency_method: dct}
+  - {kind: dual, fusion: gated, frequency_method: dct}
+frequency_ablation:
+  - {kind: frequency, frequency_method: fft}
+  - {kind: frequency, frequency_method: dct}
+  - {kind: frequency, frequency_method: srm}
+robustness:
+  corruptions: [jpeg, blur, resize, noise]
+  severities: [1, 2, 3, 4, 5]
+  seeds: [42]
+# No experiment outputs are included; all metrics must be generated from real data.
